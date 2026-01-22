@@ -73,4 +73,4 @@ Sınav notu aşağıdaki kriterlere göre verilecektir:
 4.  Kodu açıklayamayan öğrencinin projesi (kopya ve başkasına yaptırma şüphesiyle) geçersiz sayılabilir.
 
 
-*** LLM tabanlı yapay zeka araçlarını kullanananlar kopya olarak değerlendirilir. ***
+***Yapay zeka araçlarını kullanananların projeleri kopya olarak değerlendirilir.***
