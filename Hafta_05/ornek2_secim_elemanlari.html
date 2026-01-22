@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Seçim Kutuları ve Listeler</title>
+</head>
+<body>
+    <h1>Seçim Elemanları</h1>
+    <hr>
+
+    <form>
+        <h3>Radyo Butonları (Tek Seçim)</h3>
+        <p>Eğitim Durumunuz:</p>
+        <!-- name="egitim" hepsinde aynı olmalı ki sadece biri seçilebilsin -->
+        <input type="radio" id="lise" name="egitim" value="lise">
+        <label for="lise">Lise</label><br>
+        
+        <input type="radio" id="lisans" name="egitim" value="lisans" checked>
+        <label for="lisans">Lisans (Varsayılan)</label><br>
+
+        <input type="radio" id="yuksek" name="egitim" value="yuksek_lisans">
+        <label for="yuksek">Yüksek Lisans</label>
+
+        <hr>
+
+        <h3>Checkbox (Çoklu Seçim)</h3>
+        <p>Bildiğiniz Diller:</p>
+        <input type="checkbox" id="ing" name="dil" value="ingilizce">
+        <label for="ing">İngilizce</label><br>
+
+        <input type="checkbox" id="alm" name="dil" value="almanca">
+        <label for="alm">Almanca</label><br>
+
+        <input type="checkbox" id="fr" name="dil" value="fransizca">
+        <label for="fr">Fransızca</label>
+
+        <hr>
+
+        <h3>Select Box (Açılır Liste)</h3>
+        <label for="sehir">Şehir Seçiniz:</label>
+        <select id="sehir" name="sehir">
+            <option value="">-- Seçiniz --</option>
+            <option value="06">Ankara</option>
+            <option value="34">İstanbul</option>
+            <option value="35">İzmir</option>
+        </select>
+        
+        <br><br>
+        <input type="submit" value="Kaydet">
+    </form>
+</body>
+</html>

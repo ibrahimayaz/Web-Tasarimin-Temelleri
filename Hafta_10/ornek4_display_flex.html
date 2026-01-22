@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Flex Örneği</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Flex Container */
+        .flex-container {
+            display: flex; /* Flexbox özelliğini aktif et */
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            
+            /* Yatay Hizalama (X ekseni) */
+            /* justify-content: flex-start | flex-end | center | space-between | space-around */
+            justify-content: space-around; 
+            
+            /* Dikey Hizalama (Y ekseni) */
+            /* align-items: stretch | flex-start | flex-end | center */
+            align-items: center;
+
+            height: 200px; /* Dikey ortalamayı görmek için yükseklik verdik */
+            margin-bottom: 30px;
+        }
+
+        .kutu {
+            width: 80px;
+            height: 80px;
+            color: white;
+            font-weight: bold;
+            display: flex;         /* Kutunun içindeki metni de ortalamak için flex kullandık */
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        .kutu-1 { background-color: #e74c3c; } /* Kırmızı */
+        .kutu-2 { background-color: #3498db; } /* Mavi */
+        .kutu-3 { background-color: #f1c40f; } /* Sarı */
+
+        /* Flex ile Menü Yapımı */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Logo solda, linkler sağda */
+            align-items: center;
+            background-color: #2c3e50;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none; /* Noktaları kaldır */
+            display: flex;    /* Linkleri yan yana diz */
+            gap: 20px;        /* Linkler arası boşluk */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links li a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Örnek 1: Flex ile Hizalama -->
+    <h2>1. Flexbox ile Hizalama ve Dağılım</h2>
+    <div class="flex-container">
+        <div class="kutu kutu-1">1</div>
+        <div class="kutu kutu-2">2</div>
+        <div class="kutu kutu-3">3</div>
+    </div>
+    <p style="text-align: center;">Yukarıdaki kutular <code>display: flex</code> ve <code>justify-content: space-around</code> ile hizalanmıştır.</p>
+
+    <hr>
+
+    <!-- Örnek 2: Flex ile Menü -->
+    <h2>2. Flexbox ile Responsive Navbar</h2>
+    <nav class="navbar">
+        <div class="logo">Logom</div>
+        <ul class="nav-links">
+            <li><a href="#">Anasayfa</a></li>
+            <li><a href="#">Hakkında</a></li>
+            <li><a href="#">Hizmetler</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+    </nav>
+    <p style="text-align: center; margin-top:10px;">Menüde Logo en sola, linkler en sağa yaslanmıştır (<code>justify-content: space-between</code>).</p>
+
+</body>
+</html>

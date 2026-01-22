@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Giriş</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .kutu { 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            margin-top: 10px; 
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Temelleri</h1>
+    <p>F12 tuşuna basıp 'Console' sekmesini açarak çıktıları görebilirsiniz.</p>
+
+    <div class="kutu">
+        <h3>1. Değişkenler ve Çıktı</h3>
+        <button onclick="mesajGoster()">Bana Tıkla (Alert)</button>
+        <button onclick="konsolaYaz()">Konsola Yaz (Log)</button>
+    </div>
+
+    <div class="kutu">
+        <h3>2. Prompt (Veri Alma) ve Confirm (Onay)</h3>
+        <button onclick="isimSor()">İsmini Gir</button>
+        <p id="sonuc">Buraya isminiz gelecek...</p>
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde çalışacak JS kodları
+        
+        // 1. Fonksiyon: Alert Gösterir
+        function mesajGoster() {
+            let mesaj = "Merhaba! Bu ilk JavaScript kodunuz.";
+            alert(mesaj);
+        }
+
+        // 2. Fonksiyon: Konsola Yazar
+        function konsolaYaz() {
+            const sayi1 = 10;
+            const sayi2 = 20;
+            console.log("Sayıların Toplamı: " + (sayi1 + sayi2));
+            console.log("Bu mesaj sadece geliştirici konsolunda görünür.");
+        }
+
+        // 3. Fonksiyon: Kullanıcıdan Veri Alma
+        function isimSor() {
+            // confirm(): True/False döner
+            let onay = confirm("İsminizi girmek istiyor musunuz?");
+
+            if (onay == true) {
+                // prompt(): Metin girişi ister
+                let kullaniciAdi = prompt("Adınız nedir?");
+                
+                if (kullaniciAdi) {
+                    // DOM manipülasyonu ile <p> etiketini güncelleme
+                    document.getElementById("sonuc").innerHTML = "Hoşgeldin, <b>" + kullaniciAdi + "</b>!";
+                    document.getElementById("sonuc").style.color = "green";
+                }
+            } else {
+                document.getElementById("sonuc").innerHTML = "İşlem iptal edildi.";
+                document.getElementById("sonuc").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

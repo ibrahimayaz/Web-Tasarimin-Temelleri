@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Resimler ve Dosya Yolları</title>
+</head>
+<body>
+    <h1>Web Sayfalarında Görsel Kullanımı</h1>
+    <hr>
+
+    <h3>1. İnternet Üzerinden Resim Ekleme (Mutlak Yol)</h3>
+    <p>Aşağıdaki resim internet üzerindeki bir adresten çekilmektedir:</p>
+    <!-- Placeholder servisi kullanarak örnek resim gösterimi -->
+    <img src="https://placehold.co/600x200?text=Merhaba+Dunya" alt="Örnek İnternet Resmi">
+
+    <hr>
+
+    <h3>2. Boyutlandırma ve Alt Metni</h3>
+    <p>Resim yüklenemediğinde "alt" metni görünür. Ayrıca genişlik değeri vererek resmi küçültebiliriz.</p>
+    
+    <!-- Bozuk bir dosya yolu vererek alt metninin görünmesini sağlıyoruz -->
+    <img src="olmayan_resim.jpg" alt="Bu resim bulunamadı (Alt Metni Örneği)" width="200">
+    
+    <br><br>
+
+    <!-- Genişlik ayarı -->
+    <img src="https://placehold.co/200x200?text=Kucuk+Resim" alt="Küçük Kare Resim" width="150" height="150">
+
+    <hr>
+
+    <h3>3. Semantik Görsel Kullanımı (Figure ve Figcaption)</h3>
+    <p>Görsel ve açıklamasını bir arada tutmak için modern yöntem:</p>
+
+    <figure>
+        <img src="https://placehold.co/400x300?text=Manzara" alt="Güzel Bir Manzara" width="400">
+        <figcaption>Şekil 1.1: Temsili bir manzara resmi ve açıklaması.</figcaption>
+    </figure>
+
+</body>
+</html>

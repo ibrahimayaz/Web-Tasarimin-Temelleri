@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipülasyonu</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        
+        #kutu {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px auto; /* Ortala */
+            line-height: 200px; /* Metni dikey ortala */
+            font-weight: bold;
+            transition: all 0.5s; /* Animasyonlu geçiş */
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DOM ile Stil ve İçerik Değiştirme</h1>
+
+    <!-- Manipüle Edilecek Element -->
+    <div id="kutu">Ben Bir Kutuyum</div>
+
+    <!-- Kontrol Butonları -->
+    <div>
+        <button onclick="rengiDegistir()">Rengi Değiştir</button>
+        <button onclick="sekliDegistir()">Daire Yap</button>
+        <button onclick="gizleGoster()">Gizle/Göster</button>
+    </div>
+
+    <!-- Hover Olayları -->
+    <p style="margin-top: 30px; color: gray;">
+        (Fare ile kutunun üzerine gelmeyi deneyin: onmouseover)
+    </p>
+
+    <script>
+        // Elementi seçme ve değişkene atama
+        let kutuElementi = document.getElementById("kutu");
+
+        // 1. Rengi ve İçeriği Değiştirme
+        function rengiDegistir() {
+            /* Rastgele Renk Üretimi */
+            let r = Math.floor(Math.random() * 255);
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+            
+            // Stili güncelleme
+            kutuElementi.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+            // İçeriği güncelleme
+            kutuElementi.innerHTML = "Renk: RGB(" + r + "," + g + "," + b + ")";
+        }
+
+        // 2. Şekli Değiştirme (Class veya Style ile)
+        let daireMi = false;
+        function sekliDegistir() {
+            if (daireMi == false) {
+                kutuElementi.style.borderRadius = "50%"; // Daire yap
+                daireMi = true;
+            } else {
+                kutuElementi.style.borderRadius = "10px"; // Kutu yap
+                daireMi = false;
+            }
+        }
+
+        // 3. Gizle / Göster
+        function gizleGoster() {
+            if (kutuElementi.style.display === "none") {
+                kutuElementi.style.display = "block"; // Göster
+            } else {
+                kutuElementi.style.display = "none"; // Gizle
+            }
+        }
+
+        // 4. Mouse Event Listener Ekleme (JS içinden event atama)
+        kutuElementi.onmouseover = function() {
+            kutuElementi.style.cursor = "pointer";
+            kutuElementi.innerHTML = "Üzerimdesin!";
+        };
+
+        kutuElementi.onmouseout = function() {
+            kutuElementi.innerHTML = "Gittin...";
+        };
+
+    </script>
+</body>
+</html>

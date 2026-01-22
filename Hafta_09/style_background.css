@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 2000px; /* Scroll efekti görebilmek için uzun sayfa */
+}
+
+/* 1. Tam Ekran Sabit Arka Plan (Parallax Benzeri) */
+.hero-bolumu {
+    height: 100vh; /* Ekranın %100 yüksekliği */
+    
+    /* Arka Plan Ayarları */
+    background-image: url('https://placehold.co/1920x1080?text=Background+Image'); 
+    background-attachment: fixed; /* Resmi sabitle */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Resmi ekrana sığdır */
+    
+    /* İçerik Ortalama */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* 2. Tekrar Eden Desen (Pattern) */
+.desen-bolumu {
+    padding: 50px;
+    background-color: #f0f0f0;
+    /* Küçük bir ikon tekrar edilerek desen oluşturulur */
+    background-image: url('https://placehold.co/50x50?text=X'); 
+    background-repeat: repeat; 
+    color: #333;
+}
+
+/* 3. Gradyan (Renk Geçişi) */
+.gradient-bolumu {
+    padding: 100px;
+    background: linear-gradient(45deg, #FF512F, #DD2476); /* 45 derece açıyla */
+    color: white;
+    text-align: center;
+}
+
+/* 4. RGBA ile Şeffaflık */
+.seffaf-kutular {
+    background-image: url('https://placehold.co/800x400?text=Doga');
+    background-size: cover;
+    padding: 50px;
+}
+
+.kutu {
+    background-color: rgba(0, 0, 0, 0.6); /* Siyahın %60 opak hali */
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 400px;
+}

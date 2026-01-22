@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Bileşenleri</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Container: İçeriği ortalar -->
+    <div class="container mt-4">
+        
+        <h1 class="text-center text-primary mb-4">Bootstrap Bileşenleri</h1>
+
+        <!-- 1. Alerts (Uyarılar) -->
+        <div class="alert alert-success" role="alert">
+            <strong>Başarılı!</strong> Bootstrap projenize başarıyla eklendi.
+            <button type="button" class="btn-close float-end" data-bs-dismiss="alert"></button>
+        </div>
+
+        <div class="alert alert-warning" role="alert">
+            Dikkat! Bu bir uyarı mesajıdır.
+        </div>
+
+        <hr>
+
+        <!-- 2. Butonlar -->
+        <h3>Buton Çeşitleri</h3>
+        <button type="button" class="btn btn-primary">Ana Buton</button>
+        <button type="button" class="btn btn-secondary">İkincil</button>
+        <button type="button" class="btn btn-success">Başarılı</button>
+        <button type="button" class="btn btn-danger">Hata/Sil</button>
+        <button type="button" class="btn btn-warning">Uyarı</button>
+        <button type="button" class="btn btn-info">Bilgi</button>
+        <button type="button" class="btn btn-outline-primary">Çerçeveli Buton</button>
+
+        <hr>
+
+        <!-- 3. Tablolar -->
+        <h3>Bootstrap Tablosu</h3>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Kullanıcı Adı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ali</td>
+                    <td>Veli</td>
+                    <td>@ali</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ayşe</td>
+                    <td>Fatma</td>
+                    <td>@ayse</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

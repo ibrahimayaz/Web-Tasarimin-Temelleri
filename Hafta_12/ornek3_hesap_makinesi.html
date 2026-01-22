@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basit Hesap Makinesi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .hesap-makinesi {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        h2 { text-align: center; margin-top: 0; color: #333; }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding genişliği etkilemesin */
+            font-size: 16px;
+        }
+
+        .buton-grubu {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            flex: 1; /* Butonlar eşit genişlikte olsun */
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover { background-color: #0056b3; }
+        
+        button.temizle { background-color: #dc3545; width: 100%; }
+        button.temizle:hover { background-color: #a71d2a; }
+
+        #sonuc-kutusu {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hesap-makinesi">
+        <h2>Hesap Makinesi</h2>
+        
+        <!-- Giriş Alanları -->
+        <input type="number" id="sayi1" placeholder="1. Sayıyı Girin">
+        <input type="number" id="sayi2" placeholder="2. Sayıyı Girin">
+
+        <!-- İşlem Butonları -->
+        <div class="buton-grubu">
+            <button onclick="hesapla('+')">+</button>
+            <button onclick="hesapla('-')">-</button>
+            <button onclick="hesapla('*')">x</button>
+            <button onclick="hesapla('/')">/</button>
+        </div>
+
+        <button class="temizle" onclick="temizle()">Temizle</button>
+
+        <!-- Sonuç Gösterimi -->
+        <div id="sonuc-kutusu">Sonuç: -</div>
+    </div>
+
+    <script>
+        function hesapla(islemOperatoru) {
+            // 1. Inputlardaki DEĞERLERİ (value) al
+            // Inputtan gelen değerler her zaman String (metin) türündedir.
+            // Matematiksel işlem için 'Number' veya 'parseFloat' ile sayıya çevirmeliyiz.
+            let s1 = Number(document.getElementById("sayi1").value);
+            let s2 = Number(document.getElementById("sayi2").value);
+            let sonuc = 0;
+
+            // Boş kontrolü (Basit validasyon)
+            if (document.getElementById("sayi1").value === "" || document.getElementById("sayi2").value === "") {
+                alert("Lütfen her iki sayıyı da giriniz!");
+                return; // Fonksiyonu burada durdur
+            }
+
+            // 2. İşleme göre hesap yap (if-else yapısı)
+            if (islemOperatoru === '+') {
+                sonuc = s1 + s2;
+            } else if (islemOperatoru === '-') {
+                sonuc = s1 - s2;
+            } else if (islemOperatoru === '*') {
+                sonuc = s1 * s2;
+            } else if (islemOperatoru === '/') {
+                if (s2 === 0) {
+                    alert("Bir sayı 0'a bölünemez!");
+                    return;
+                }
+                sonuc = s1 / s2;
+            }
+
+            // 3. Sonucu Ekrana Bas (DOM Manipülasyonu)
+            // .toFixed(2) virgülden sonra en fazla 2 basamak gösterir
+            document.getElementById("sonuc-kutusu").innerHTML = "Sonuç: " + sonuc;
+        }
+
+        function temizle() {
+            document.getElementById("sayi1").value = "";
+            document.getElementById("sayi2").value = "";
+            document.getElementById("sonuc-kutusu").innerHTML = "Sonuç: -";
+        }
+    </script>
+
+</body>
+</html>

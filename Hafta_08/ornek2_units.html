@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Ölçü Birimleri (px, em, rem, %)</title>
+    <style>
+        /* Kök element (html) varsayılanı genelde 16px'dir */
+        html { font-size: 16px; }
+
+        .kutu {
+            border: 2px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        /* Piksel (px) - Sabit */
+        .px-ornek {
+            font-size: 20px; /* Her yerde 20px */
+            width: 300px;
+        }
+
+        /* Yüzde (%) - Göreceli */
+        .yuzde-ornek {
+            font-size: 150%; /* 16px'in %150'si = 24px */
+            width: 50%; /* Ekran veya kapsayıcının yarısı */
+            background-color: lightblue;
+        }
+
+        /* REM - Kök elemente göre */
+        .rem-ornek {
+            font-size: 2rem; /* 16px * 2 = 32px */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ölçü Birimleri Karşılaştırması</h1>
+
+    <div class="kutu px-ornek">
+        <h3>Piksel (px)</h3>
+        <p>Genişlik: 300px (Sabit). Ekran küçülse de ben küçülmem.</p>
+    </div>
+
+    <div class="kutu yuzde-ornek">
+        <h3>Yüzde (%)</h3>
+        <p>Genişlik: %50. Pencereyi daraltırsan ben de daralırım.</p>
+    </div>
+
+    <div class="kutu rem-ornek">
+        <h3>REM Birimi</h3>
+        <p>Benim yazı boyutun 2rem (32px). Tarayıcı kök ayarına göre değişirim.</p>
+    </div>
+
+</body>
+</html>

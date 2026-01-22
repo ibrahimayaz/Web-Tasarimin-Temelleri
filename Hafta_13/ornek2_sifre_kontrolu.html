@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Şifre Gücü Kontrolü</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 400px; margin: 0 auto; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; box-sizing: border-box;}
+        
+        .mesaj { font-size: 14px; margin-bottom: 5px; }
+        .gecersiz { color: red; }
+        .gecerli { color: green; font-weight: bold; }
+        
+        .guc-gostergesi {
+            height: 10px;
+            background-color: #eee;
+            margin-top: 5px;
+            transition: width 0.3s;
+            width: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Şifre Oluşturma</h2>
+        <input type="password" id="sifre1" placeholder="Şifreniz" onkeyup="sifreKontrol()">
+        <input type="password" id="sifre2" placeholder="Şifre Tekrar" onkeyup="sifreEslesmeKontrol()">
+        
+        <!-- Şifre Gereksinimleri -->
+        <div id="kural-uzunluk" class="mesaj gecersiz">✘ En az 8 karakter</div>
+        <div id="kural-eslesme" class="mesaj gecersiz">✘ Şifreler eşleşmiyor</div>
+
+        <!-- Şifre Gücü Barı -->
+        <p>Güç Seviyesi:</p>
+        <div style="background-color: lightgray; width: 100%;">
+            <div id="bar" class="guc-gostergesi"></div>
+        </div>
+        <p id="durum-metni"></p>
+    </div>
+
+    <script>
+        let s1Input = document.getElementById("sifre1");
+        let s2Input = document.getElementById("sifre2");
+        let kuralUzunluk = document.getElementById("kural-uzunluk");
+        let kuralEslesme = document.getElementById("kural-eslesme");
+        let bar = document.getElementById("bar");
+        let durumMetni = document.getElementById("durum-metni");
+
+        function sifreKontrol() {
+            let val = s1Input.value;
+            let guc = 0;
+
+            // 1. Uzunluk Kontrolü
+            if (val.length >= 8) {
+                kuralUzunluk.classList.replace("gecersiz", "gecerli");
+                kuralUzunluk.innerHTML = "✔ Uzunluk yeterli";
+                guc += 30;
+            } else {
+                kuralUzunluk.classList.replace("gecerli", "gecersiz");
+                kuralUzunluk.innerHTML = "✘ En az 8 karakter";
+            }
+
+            // Bonus: Basit Güç Kontrolü (Uzunluğa göre)
+            if (val.length > 12) guc += 20;
+            
+            // Eğer sayı içeriyorsa güç arttır (Regex ile kontrol)
+            // \d ifadesi rakam (digit) demektir.
+            if (/\d/.test(val)) { 
+                guc += 25; 
+            }
+            // Eğer harf içeriyorsa
+            if (/[a-zA-Z]/.test(val)) {
+                guc += 25;
+            }
+
+            // Barı Güncelle
+            bar.style.width = guc + "%";
+            
+            if (guc < 40) {
+                bar.style.backgroundColor = "red";
+                durumMetni.innerText = "Zayıf";
+            } else if (guc < 80) {
+                bar.style.backgroundColor = "orange";
+                durumMetni.innerText = "Orta";
+            } else {
+                bar.style.backgroundColor = "green";
+                durumMetni.innerText = "Güçlü";
+            }
+
+            // Eşleşmeyi tekrar kontrol et (Çünkü şifre1 değişti)
+            sifreEslesmeKontrol();
+        }
+
+        function sifreEslesmeKontrol() {
+            if (s1Input.value === s2Input.value && s1Input.value !== "") {
+                kuralEslesme.classList.replace("gecersiz", "gecerli");
+                kuralEslesme.innerHTML = "✔ Şifreler eşleşiyor";
+            } else {
+                kuralEslesme.classList.replace("gecerli", "gecersiz");
+                kuralEslesme.innerHTML = "✘ Şifreler eşleşmiyor";
+            }
+        }
+    </script>
+
+</body>
+</html>

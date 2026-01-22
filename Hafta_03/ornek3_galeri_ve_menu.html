@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeri ve Menü Örneği</title>
+</head>
+<body>
+    <h1>Karmaşık Yapılar: Menüler ve Galeri</h1>
+    <hr>
+
+    <h3>1. İç İçe Listeler ile Menü Yapısı</h3>
+    <p>Web sitelerindeki açılır menülerin temeli bu yapıdır:</p>
+
+    <ul>
+        <li><a href="#">Anasayfa</a></li>
+        <li><a href="#">Kurumsal</a>
+            <ul>
+                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#">Vizyonumuz</a></li>
+                <li><a href="#">Misyonumuz</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Ürünler</a>
+            <ul>
+                <li><a href="#">Elektronik</a>
+                    <ul> <!-- 3. Seviye Liste -->
+                        <li>Telefon</li>
+                        <li>Bilgisayar</li>
+                    </ul>
+                </li>
+                <li><a href="#">Giyim</a></li>
+            </ul>
+        </li>
+        <li><a href="#">İletişim</a></li>
+    </ul>
+
+    <hr>
+
+    <h3>2. Basit Fotoğraf Galerisi</h3>
+    <p>Liste ve Figure etiketlerini birleştirerek bir galeri taslağı:</p>
+
+    <!-- Resimler yan yana gelmese de (henüz CSS öğrenmedik), yapısal olarak bir listedir -->
+    <ul>
+        <li>
+            <figure>
+                <img src="https://placehold.co/200x150?text=Resim+1" alt="Galeri Resmi 1">
+                <figcaption>Doğa Yürüyüşü</figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="https://placehold.co/200x150?text=Resim+2" alt="Galeri Resmi 2">
+                <figcaption>Şehir Turu</figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="https://placehold.co/200x150?text=Resim+3" alt="Galeri Resmi 3">
+                <figcaption>Müze Gezisi</figcaption>
+            </figure>
+        </li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gelişmiş Validasyonlu Form</title>
+</head>
+<body>
+    <h1>Üye Kayıt (Validasyonlu)</h1>
+    <p>Lütfen aşağıdaki formu doldurunuz. Zorunlu alanları boş geçerseniz form gönderilmeyecektir.</p>
+    <hr>
+
+    <form action="kayit_tamam.php" method="POST">
+        
+        <p>
+            <label for="kadi">Kullanıcı Adı (Zorunlu, Min 3 Karakter):</label><br>
+            <input type="text" id="kadi" name="kullanici_adi" required minlength="3" placeholder="kullanici123">
+        </p>
+
+        <p>
+            <label for="tel">Telefon (5xx-xxx-xxxx formatında):</label><br>
+            <input type="tel" id="tel" name="telefon" placeholder="532-123-4567" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <br><small>Örnek format: 532-555-4433</small>
+        </p>
+
+        <p>
+            <label for="email">E-posta (Zorunlu):</label><br>
+            <input type="email" id="email" name="eposta" required>
+        </p>
+
+        <p>
+            <label for="web">Web Sitesi (URL):</label><br>
+            <input type="url" id="web" name="websitesi" placeholder="https://www.ornek.com">
+        </p>
+
+        <p>
+            <label for="mesaj">Mesajınız:</label><br>
+            <textarea id="mesaj" name="mesaj" rows="4" cols="50" placeholder="Mesajınızı buraya yazın..."></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Kayıt Ol">
+        </p>
+
+    </form>
+
+</body>
+</html>

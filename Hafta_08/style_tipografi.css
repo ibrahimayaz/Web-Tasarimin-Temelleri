@@ -1,0 +1,50 @@
+/* Global Ayarlar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6; /* Satır yüksekliği okunabilirlik için 1.6 kat */
+    color: #333;
+    padding: 20px;
+}
+
+/* Başlık Stilleri */
+h1 {
+    font-family: 'Georgia', serif; /* Tırnaklı font */
+    color: #2c3e50;
+    text-align: center;
+    text-transform: uppercase; /* Hepsi BÜYÜK HARF */
+    letter-spacing: 5px; /* Harf aralığı */
+    border-bottom: 3px double #2c3e50;
+    padding-bottom: 10px;
+}
+
+/* Paragraf ve Linkler */
+p {
+    text-align: justify; /* İki yana yasla */
+    margin-bottom: 15px;
+}
+
+a {
+    color: crimson;
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline; /* Üzerine gelince altını çiz */
+}
+
+/* Özel Sınıflar */
+.vurgulu-metin {
+    background-color: yellow;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.golgeli-metin {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #555;
+    padding: 10px;
+    text-shadow: 2px 2px 4px #000000; /* Metin gölgesi */
+}

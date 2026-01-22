@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Temel Form Validasyonu</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .form-container { width: 300px; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
+        input { width: 100%; margin-bottom: 10px; padding: 5px; box-sizing: border-box;}
+        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; cursor: pointer; }
+        .hata { color: red; font-size: 12px; display: none; margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+
+    <h2>Kullanıcı Giriş Kontrolü</h2>
+    <div class="form-container">
+        <!-- Form submit olduğunda girisKontrol() fonksiyonu çalışır. 
+             Eğer fonksiyon 'false' dönerse form gönderilmez. -->
+        <form name="girisFormu" onsubmit="return girisKontrol()">
+            
+            <label>Kullanıcı Adı:</label>
+            <input type="text" id="kadi" placeholder="Kullanıcı adı..">
+            <div id="hata-kadi" class="hata">Kullanıcı adı boş olamaz!</div>
+
+            <label>Yaş (+18):</label>
+            <input type="text" id="yas" placeholder="Yaşınız..">
+            <div id="hata-yas" class="hata"></div>
+
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
+
+    <script>
+        function girisKontrol() {
+            // Hata kutularını temizle/gizle
+            document.getElementById("hata-kadi").style.display = "none";
+            document.getElementById("hata-yas").style.display = "none";
+
+            // 1. Değerleri Al
+            let kadi = document.getElementById("kadi").value.trim(); // Boşlukları temizle
+            let yas = document.getElementById("yas").value;
+            let hataVarMi = false;
+
+            // 2. Kullanıcı Adı Kontrolü (Boş mu?)
+            if (kadi === "") {
+                document.getElementById("hata-kadi").style.display = "block";
+                hataVarMi = true;
+            }
+
+            // 3. Yaş Kontrolü (Sayı mı? 18'den büyük mü?)
+            if (yas === "") {
+                document.getElementById("hata-yas").innerHTML = "Yaş alanı boş olamaz.";
+                document.getElementById("hata-yas").style.display = "block";
+                hataVarMi = true;
+            } 
+            else if (isNaN(yas)) { // Sayı değilse
+                document.getElementById("hata-yas").innerHTML = "Lütfen geçerli bir sayı giriniz.";
+                document.getElementById("hata-yas").style.display = "block";
+                hataVarMi = true;
+            } 
+            else if (Number(yas) < 18) {
+                document.getElementById("hata-yas").innerHTML = "Yaşınız 18'den küçük olamaz.";
+                document.getElementById("hata-yas").style.display = "block";
+                hataVarMi = true;
+            }
+
+            // 4. Sonuç (Hata varsa false döndür ve gönderimi engelle)
+            if (hataVarMi) {
+                return false;
+            }
+
+            alert("Giriş Başarılı! Form gönderiliyor...");
+            return true;
+        }
+    </script>
+</body>
+</html>

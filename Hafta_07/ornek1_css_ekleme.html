@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Ekleme Yöntemleri</title>
+    
+    <!-- 1. Dahili (Internal) CSS -->
+    <style>
+        h1 {
+            color: darkblue;
+            text-decoration: underline;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+
+    <!-- 2. Harici (External) CSS (Tavsiye Edilen) -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+    <h1>CSS Ekleme Yöntemleri</h1>
+
+    <p>Bu metin head kısmındaki stile göre biçimlendirildi (Internal CSS).</p>
+
+    <!-- 3. Satır İçi (Inline) CSS -->
+    <p style="color: red; font-weight: bold; border: 1px solid black; padding: 10px;">
+        Bu metin satır içi (inline) CSS ile biçimlendirildi. Çok güçlüdür ama yönetimi zordur.
+    </p>
+
+</body>
+</html>

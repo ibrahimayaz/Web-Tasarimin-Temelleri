@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İleri Seviye Form Elemanları</title>
+</head>
+<body>
+    <h1>HTML5 Yeni Input Tipleri</h1>
+    <hr>
+    
+    <form>
+        <p>
+            <label for="dogum">Doğum Tarihiniz (Date):</label><br>
+            <input type="date" id="dogum" name="dogum_tarihi">
+        </p>
+
+        <p>
+            <label for="adet">Ürün Adedi (Number - Min 1, Max 10):</label><br>
+            <input type="number" id="adet" name="adet" min="1" max="10" value="1">
+        </p>
+
+        <p>
+            <label for="renk">Tema Rengini Seçin (Color):</label><br>
+            <input type="color" id="renk" name="tema_renk" value="#ff0000">
+        </p>
+
+        <p>
+            <label for="slider">Ses Seviyesi (Range):</label><br>
+            <input type="range" id="slider" name="ses" min="0" max="100">
+        </p>
+
+        <p>
+            <label for="dosya">CV Yükle (File):</label><br>
+            <input type="file" id="dosya" name="ozgecmis">
+        </p>
+        
+        <input type="submit" value="Gönder">
+    </form>
+</body>
+</html>

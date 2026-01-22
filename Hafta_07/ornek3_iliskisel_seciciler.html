@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Seçici İlişkileri</title>
+    <style>
+        /* Genel div stili */
+        div {
+            border: 1px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 1. Torun Seçici (Descendant Selector): div p */
+        /* div'in içindeki TÜM p'leri seçer (ne kadar derinde olduğu önemli değil) */
+        .kapsayici1 p {
+            color: blue;
+        }
+
+        /* 2. Çocuk Seçici (Child Selector): div > p */
+        /* div'in sadece DOĞRUDAN Çocukları olan p'leri seçer */
+        .kapsayici2 > p {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>İlişkisel Seçiciler (Parent-Child)</h1>
+
+    <h3>1. Torun Seçici (Boşluk)</h3>
+    <div class="kapsayici1">
+        <p>Bu paragraf mavidir. (Doğrudan çocuk)</p>
+        <section>
+            <p>Bu paragraf da mavidir. (Torun - Başka elementin içinde olsa bile)</p>
+        </section>
+    </div>
+
+    <h3>2. Çocuk Seçici (>)</h3>
+    <div class="kapsayici2">
+        <p>Bu paragraf kırmızıdır. (Doğrudan çocuk)</p>
+        <section>
+            <p style="color:black;">Bu paragraf ETKİLENMEZ! (Çünkü doğrudan çocuk değil, torun)</p>
+        </section>
+    </div>
+
+</body>
+</html>

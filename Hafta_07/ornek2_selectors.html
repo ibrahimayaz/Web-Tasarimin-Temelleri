@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Seçiciler ve Harici CSS</title>
+    <!-- Harici CSS dosyasını bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="ozel-logo">WEB TASARIM</h1>
+    <h2 class="center">CSS Seçiciler Örneği</h2>
+
+    <!-- Class Kullanımı (Bir .kutu stilimiz var, tekrar tekrar kullanıyoruz) -->
+    <div class="kutu">
+        <h3>Class Seçicisi (.)</h3>
+        <p>
+            Bu kutu <code>.kutu</code> sınıfına sahiptir. CSS dosyasındaki kurallara göre şekillenir.
+            İçindeki <span class="onemli">önemli</span> metinler kırmızı olur.
+        </p>
+    </div>
+
+    <div class="kutu">
+        <h3>Başka Bir Kutu</h3>
+        <p>Aynı stili tekrar yazdım mı? Hayır! Sadece sınıf ismini (class="kutu") verdim.</p>
+        <ul>
+            <li>Liste maddesi 1</li>
+            <li>Liste maddesi 2</li>
+        </ul>
+    </div>
+
+    <!-- ID Seçicisi -->
+    <div id="footer-alani" class="kutu center">
+        <p>Bu alan bir ID'ye sahiptir (#footer-alani), bu yüzden sayfada tek olmalıdır.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hücre Birleştirme (Merging)</title>
+</head>
+<body>
+    <h1>Colspan ve Rowspan Kullanımı</h1>
+    <hr>
+
+    <table border="1" width="60%" cellspacing="0" cellpadding="5">
+        <tr>
+            <!-- Colspan: 3 Sütunu birleştir -->
+            <th colspan="3" bgcolor="#f2f2f2">Yıllık Satış Raporu</th>
+        </tr>
+        <tr>
+            <th>Bölge</th>
+            <th>Ürün</th>
+            <th>Miktar</th>
+        </tr>
+        <tr>
+            <!-- Rowspan: 2 Satırı birleştir -->
+            <td rowspan="2">Marmara</td>
+            <td>Bilgisayar</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <!-- Marmara hücresi üstte tanımlandığı için burada yazılmaz -->
+            <td>Telefon</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Ege</td>
+            <td>Bilgisayar</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Telefon</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <!-- Hem satır hem sütun toplamı için -->
+            <th colspan="2" align="right">Toplam Satış:</th>
+            <td><b>580</b></td>
+        </tr>
+    </table>
+
+</body>
+</html>
