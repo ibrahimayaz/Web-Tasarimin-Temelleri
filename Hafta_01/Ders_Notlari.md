@@ -56,7 +56,7 @@ HTML etiketleri genellikle açılır ve kapanır:
 
 ### Temel HTML Sayfa İskeleti
 Her HTML5 dosyası şu standart yapıya sahiptir:
-
+![dom-tree](https://raw.githubusercontent.com/Kodluyoruz/taskforce/main/javascript/javascript-temel/document-object-model-dom-nedir/figures/dom-tree.png)
 ```html
 <!DOCTYPE html> <!-- Tarayıcıya bunun bir HTML5 dosyası olduğunu söyler -->
 <html>          <!-- Kök element, her şey bunun içindedir -->
