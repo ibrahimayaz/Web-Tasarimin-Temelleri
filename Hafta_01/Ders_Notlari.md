@@ -46,7 +46,9 @@ HTML kodlarını yazmak için basit bir metin düzenleyici bile yeterlidir, anca
 
 ## 7. HTML'e Giriş ve Temel Yapısı
 
-**HTML (HyperText Markup Language):** Hiper Metin İşaretleme Dili anlamına gelir. Bir programlama dili değil, bir işaretleme dilidir. Sayfanın iskeletini oluşturur.
+**HTML (HyperText Markup Language):** Hiper Metin İşaretleme Dili anlamına gelir. **Bir programlama dili değil, bir işaretleme dilidir**. Sayfanın iskeletini oluşturur.
+
+![htmliskelet](https://d2dkqamqz2k831.cloudfront.net/posts/338-1733217432633.jpg)
 
 ### HTML Etiket (Tag) Mantığı
 HTML etiketleri genellikle açılır ve kapanır:
