@@ -42,11 +42,9 @@ Metinleri kalın, italik veya altı çizili yapmak için kullanılır.
 | Etiket | Açıklama |
 | :--- | :--- |
 | `<b>` | Metni **kalın** yapar (Sadece görsel). |
-| `<strong>` | Metni **önemli/kalın** yapar (Semantik açıdan önemli, arama motorları önemser). |
 | `<i>` | Metni *italik* yapar (Sadece görsel). |
-| `<em>` | Metni *vurgulu/italik* yapar (Semantik vurgu). |
 | `<u>` | Metnin <u>altını çizer</u>. (Linklerle karışmaması için dikkatli kullanılmalı). |
-| `<del>` / `<s>` | Metnin ~~üzerini çizer~~. (Silinmiş veya geçersiz bilgi). |
+| `<s>` | Metnin ~~üzerini çizer~~. (Silinmiş veya geçersiz bilgi). |
 | `<mark>` | Metni <mark>sarı fosforlu</mark> kalemle çizilmiş gibi vurgular. |
 
 ### Alt ve Üst Simge (`<sub>`, `<sup>`)
@@ -96,18 +94,3 @@ Kodu okuyan kişilere not bırakmak veya bazı kodları geçici olarak devre dı
 <!-- <p>Bu kod iptal edildi, çalışmaz.</p> -->
 ```
 
-## 5. HTML Özel Karakterler (Entities)
-Klavyede bulunmayan veya HTML için özel anlamı olan karakterleri (<, > gibi) yazmak için kullanılırlar.
-
-| Karakter | Kod | Açıklama |
-| :--- | :--- | :--- |
-| (Boşluk) | `&nbsp;` | Non-breaking space (Fazladan boşluk bırakmak için). |
-| < | `&lt;` | Küçüktür işareti (Tag açma ile karışmaması için). |
-| > | `&gt;` | Büyüktür işareti. |
-| © | `&copy;` | Telif hakkı sembolü. |
-| ® | `&reg;` | Tescilli marka sembolü. |
-
-```html
-<p>Telif Hakkı &copy; 2024</p>
-<p>5 &lt; 10</p>
-```
